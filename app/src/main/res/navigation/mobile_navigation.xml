@@ -11,20 +11,15 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.movieviewingapp.ui.fragment.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.movieviewingapp.ui.fragment.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_popular"
         android:name="com.example.movieviewingapp.ui.fragment.popular.PopularFragment"
         android:label="Movie Popular"
         tools:layout="@layout/fragment_popular" />
+    <fragment
+        android:id="@+id/nav_upcoming"
+        android:name="com.example.movieviewingapp.ui.fragment.upcoming.UpcomingFragment"
+        android:label="Movie Upcoming"
+        tools:layout="@layout/fragment_upcoming" />
 </navigation>
