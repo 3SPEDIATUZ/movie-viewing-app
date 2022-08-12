@@ -1,4 +1,4 @@
-package com.example.movieviewingapp.ui.home
+package com.example.movieviewingapp.ui.fragment.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.movieviewingapp.R
 import com.example.movieviewingapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

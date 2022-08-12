@@ -1,5 +1,6 @@
 package com.example.movieviewingapp.di
 
+import com.example.movieviewingapp.data.repository.MovieRepository
 import com.example.movieviewingapp.data.repository.MovieRepositoryImpl
 import dagger.Module
 import dagger.Provides
@@ -13,5 +14,5 @@ object MovieModule {
 
     @Singleton
     @Provides
-    fun provideMovie(movieRepositoryImpl: MovieRepositoryImpl): MovieRepositoryImpl = movieRepositoryImpl
+    fun provideMovie(movieRepositoryImpl: MovieRepositoryImpl): MovieRepository = movieRepositoryImpl
 }

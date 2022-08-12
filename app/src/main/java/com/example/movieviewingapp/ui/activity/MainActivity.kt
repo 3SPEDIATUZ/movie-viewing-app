@@ -1,7 +1,8 @@
-package com.example.movieviewingapp
+package com.example.movieviewingapp.ui.activity
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,8 +12,11 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movieviewingapp.R
 import com.example.movieviewingapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -37,7 +41,11 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home,
+                R.id.nav_popular,
+                R.id.nav_upcoming,
+                R.id.nav_topRated,
+                R.id.nav_nowPlaying
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -48,6 +56,18 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Manejar los clics del elemento de la barra de acción aquí.
+        // La barra de acción manejará automáticamente los clics en el botón Inicio / Arriba,
+        // siempre que especifique una actividad principal en AndroidManifest.xml.
+        val id = item.itemId
+        if (id == R.id.action_exit){
+            finishAffinity() // Finaliza la actividad o cierra la app
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {

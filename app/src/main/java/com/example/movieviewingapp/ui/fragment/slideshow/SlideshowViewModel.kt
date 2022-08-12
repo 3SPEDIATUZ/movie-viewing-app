@@ -1,4 +1,4 @@
-package com.example.movieviewingapp.ui.slideshow
+package com.example.movieviewingapp.ui.fragment.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
