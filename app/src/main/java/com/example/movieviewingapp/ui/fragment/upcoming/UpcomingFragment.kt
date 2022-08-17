@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movieviewingapp.R
 import com.example.movieviewingapp.data.remote.model.MovieModel
@@ -20,6 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class UpcomingFragment : Fragment(), MovieAdapter.OnClickListener {
      private lateinit var binding: FragmentUpcomingBinding
      private lateinit var movieAdapter: MovieAdapter
+    private lateinit var navController: NavController
      private val upcomingViewModel : UpcomingViewModel by viewModels()
 
     override fun onCreateView(
@@ -64,7 +68,22 @@ class UpcomingFragment : Fragment(), MovieAdapter.OnClickListener {
     }
 
     override fun onClick(data: MovieModel) {
-        TODO("Not yet implemented")
+        navController = view?.let { Navigation.findNavController(it) }!!
+        navController.navigate(
+            R.id.movieDetailFragment,
+            bundleOf(
+                "background" to data.background,
+                "language" to data.language,
+                "originalTitle" to data.originalTitle,
+                "description" to data.description,
+                "popularity" to data.popularity,
+                "poster" to data.poster,
+                "date" to data.date,
+                "title" to data.title,
+                "voteAverage" to data.voteAverage,
+                "voteCount" to data.voteCount,
+            )
+        )
     }
 
 

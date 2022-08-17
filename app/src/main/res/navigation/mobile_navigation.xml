@@ -33,4 +33,9 @@
         android:name="com.example.movieviewingapp.ui.fragment.nowPlaying.NowPlayingFragment"
         android:label="Movie Now Playing"
         tools:layout="@layout/fragment_now_playing" />
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.movieviewingapp.ui.fragment.movieDetail.MovieDetailFragment"
+        android:label="Movie Detail"
+        tools:layout="@layout/fragment_movie_detail" />
 </navigation>
