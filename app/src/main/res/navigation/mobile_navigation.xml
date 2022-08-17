@@ -28,4 +28,9 @@
         android:name="com.example.movieviewingapp.ui.fragment.topRated.TopRatedFragment"
         android:label="Movie Top Rated"
         tools:layout="@layout/fragment_top_rated" />
+    <fragment
+        android:id="@+id/nav_nowPlaying"
+        android:name="com.example.movieviewingapp.ui.fragment.nowPlaying.NowPlayingFragment"
+        android:label="Movie Now Playing"
+        tools:layout="@layout/fragment_now_playing" />
 </navigation>
