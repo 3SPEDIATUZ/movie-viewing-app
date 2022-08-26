@@ -1,4 +1,4 @@
-package com.example.movieviewingapp.ui.fragment.home
+package com.example.movieviewingapp.ui.viewModel.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

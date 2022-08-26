@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.movieviewingapp.databinding.FragmentHomeBinding
+import com.example.movieviewingapp.ui.viewModel.home.HomeViewModel
 
 class HomeFragment : Fragment() {
 

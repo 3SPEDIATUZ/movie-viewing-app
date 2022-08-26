@@ -16,6 +16,7 @@ import com.example.movieviewingapp.R
 import com.example.movieviewingapp.data.remote.model.MovieModel
 import com.example.movieviewingapp.databinding.FragmentTopRatedBinding
 import com.example.movieviewingapp.ui.adapter.MovieAdapter
+import com.example.movieviewingapp.ui.viewModel.topRated.TopRatedViewModel
 import com.example.movieviewingapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewManager
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import com.bumptech.glide.Glide
-import com.example.movieviewingapp.R
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.movieviewingapp.databinding.FragmentMovieDetailBinding
+import com.example.movieviewingapp.ui.viewModel.movieDetail.MovieDetailViewModel
 import com.example.movieviewingapp.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,10 +36,14 @@ class MovieDetailFragment : Fragment() {
     private fun setContent(){
         arguments?.let { bundle ->
             Glide.with(requireContext())
-                .load("${Constants.URL_IMG}${bundle.getString("background")}").centerCrop()
+                .load("${Constants.URL_IMG}${bundle.getString("background")}")
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(binding.imagenViewBackground)
             Glide.with(requireContext())
-                .load("${Constants.URL_IMG}${bundle.getString("poster")}").centerCrop()
+                .load("${Constants.URL_IMG}${bundle.getString("poster")}")
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(binding.imagenViewPoster)
             binding.textViewTilte.text = bundle.getString("title")
             binding.textViewRating.text ="${bundle.getFloat("voteAverage")} (${bundle.getFloat("popularity")} Reviews)"
